@@ -8,7 +8,7 @@ export default class PreReleasePlugin extends Plugin {
 
     if (!isDryRun) {
       await $`git checkout -b release/${pkg.version}`;
-      await $`git push origin release/${pkg.version}`;
+      await $`git push origin release/${pkg.version} --follow-tags`;
     }
 
     return super.afterRelease();
