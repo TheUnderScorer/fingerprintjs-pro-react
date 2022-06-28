@@ -10,7 +10,7 @@
       "preset": "angular",
       "infile": "CHANGELOG.md"
     },
-    "./release/plugins/PreRelease.plugin.mjs": {}
+    "./release/plugins/PrepareRelease.plugin.mjs": {}
   },
   "git": {
     "push": false,
