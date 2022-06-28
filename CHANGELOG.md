@@ -1,19 +1,3 @@
-
-
-# [1.3.0](https://github.com/fingerprintjs/fingerprintjs-pro-react/compare/v1.1.0...v1.3.0) (2022-06-28)
-
-
-### Features
-
-* use latest @fingerprintjs/fingerprintjs-pro-spa version ([3576871](https://github.com/fingerprintjs/fingerprintjs-pro-react/commit/3576871b9f897f4b0091b2c9cec1735de1e52f22))
-
-# [1.2.0](https://github.com/fingerprintjs/fingerprintjs-pro-react/compare/v1.1.0...v1.2.0) (2022-06-28)
-
-
-### Features
-
-* use latest @fingerprintjs/fingerprintjs-pro-spa version ([3576871](https://github.com/fingerprintjs/fingerprintjs-pro-react/commit/3576871b9f897f4b0091b2c9cec1735de1e52f22))
-
 ### 1.1.0 (2022-06-20)
 
 ##### Chores
