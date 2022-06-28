@@ -1,0 +1,22 @@
+{
+  "npm": {
+    "publish": true,
+    "allowSameVersion": true
+  },
+  "github": {
+    "release": true
+  },
+  "plugins": {
+    "./release/plugins/Release.plugin.mjs": {},
+    "@release-it/conventional-changelog": {
+      "preset": "angular",
+      "ignoreRecommendedBump": true
+    }
+  },
+  "git": {
+    "push": false,
+    "commit": false,
+    "tag": false,
+    "requireCleanWorkingDir": false
+  }
+}

@@ -1,20 +1,17 @@
 import { Plugin } from "release-it";
 import { $ } from "zx";
+import { getCurrentVersion } from "./utils.mjs";
 
 export default class PreReleasePlugin extends Plugin {
   async afterRelease() {
     const isDryRun = this.config.options["dry-run"];
 
-    const pkg = await import('../../package.json', {
-      assert: {
-        type: 'json'
-      }
-    }).then(module => module.default)
+    const version = getCurrentVersion();
 
     if (!isDryRun) {
-      await $`git checkout -b release/${pkg.version}`;
-      await $`git push origin release/${pkg.version} --follow-tags`;
-      await $`gh pr create --title "Release ${pkg.version}" --body "Release ${pkg.version}"`;
+      await $`git checkout -b release/${version}`;
+      await $`git push origin release/${version} --follow-tags`;
+      await $`gh pr create --title "Release ${version}" --body "Release ${version}"`;
     }
 
     return super.afterRelease();
