@@ -14,6 +14,7 @@ export default class PreReleasePlugin extends Plugin {
     if (!isDryRun) {
       await $`git checkout -b release/${pkg.version}`;
       await $`git push origin release/${pkg.version} --follow-tags`;
+      await $`gh pr create --title "Release ${pkg.version}" --body "Release ${pkg.version}" --labels release`;
     }
 
     return super.afterRelease();
