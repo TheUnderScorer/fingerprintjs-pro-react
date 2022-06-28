@@ -21,6 +21,14 @@ jobs:
       - name: Build library
         run: yarn build
 
+      - name: configure git
+        run: |
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git remote set-url origin https://${GITHUB_REPOSITORY_OWNER}:$GITHUB_TOKEN@github.com/${GITHUB_REPOSITORY}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Prepare release
         run: yarn prepare-release
         env:
