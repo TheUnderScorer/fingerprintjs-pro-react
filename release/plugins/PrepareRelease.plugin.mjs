@@ -2,11 +2,11 @@ import { Plugin } from "release-it";
 import { $ } from "zx";
 import { getCurrentVersion } from "./utils.mjs";
 
-export default class PreReleasePlugin extends Plugin {
+export default class PrepareReleasePlugin extends Plugin {
   async afterRelease() {
     const isDryRun = this.config.options["dry-run"];
 
-    const version = getCurrentVersion();
+    const version = await getCurrentVersion();
 
     if (!isDryRun) {
       await $`git checkout -b release/${version}`;
