@@ -1,0 +1,36 @@
+name: Prepare release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    environment: production
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build library
+        run: yarn build
+
+      - name: Prepare release
+        run: yarn prepare-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_RELEASE_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          HUSKY: 0
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+
+
