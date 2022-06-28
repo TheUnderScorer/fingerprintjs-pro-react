@@ -29,10 +29,9 @@ jobs:
       - name: Build library
         run: yarn build
 
-#      - name: Release
-#        run: yarn release
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#          GH_TOKEN: ${{ secrets.GH_RELEASE_TOKEN }}
-#          NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-#          HUSKY: 0
+      - name: Release
+        run: yarn release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          HUSKY: 0

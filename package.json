@@ -1,6 +1,6 @@
 {
   "name": "@fingerprintjs/fingerprintjs-pro-react",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "FingerprintJS Pro React SDK",
   "main": "dist/fp-pro-react.cjs.js",
   "module": "dist/fp-pro-react.esm.js",
@@ -28,7 +28,8 @@
     "release:minor": "changelog -m && git add CHANGELOG.md && yarn version --minor --no-git-tag-version",
     "release:patch": "changelog -p && git add CHANGELOG.md && yarn version --patch --no-git-tag-version",
     "docs": "typedoc src/index.ts --out docs",
-    "release": "semantic-release",
+    "release": "release-it --config release/release.json --ci",
+    "release:dry": "yarn run release -- --dry-run",
     "prepare-release": "release-it --config release/prepare-release.json --ci",
     "prepare-release:dry-run": "yarn prepare-release -- --dry-run"
   },
