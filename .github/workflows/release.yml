@@ -10,13 +10,6 @@ jobs:
     environment: production
     runs-on: ubuntu-latest
     steps:
-      - name: Check Commit Type
-        uses: gsactions/commit-message-checker@v1
-        with:
-          pattern: '^chore\(release\)'
-          flags: 'gm'
-          error: 'Skipping for non release commit.'
-
       - name: Checkout
         uses: actions/checkout@v3
         with:
