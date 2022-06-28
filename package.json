@@ -29,7 +29,8 @@
     "release:patch": "changelog -p && git add CHANGELOG.md && yarn version --patch --no-git-tag-version",
     "docs": "typedoc src/index.ts --out docs",
     "release": "semantic-release",
-    "prepare-release": "release-it --config release/prepare-release.json --ci"
+    "prepare-release": "release-it --config release/prepare-release.json --ci",
+    "prepare-release:dry-run": "yarn prepare-release -- --dry-run"
   },
   "files": [
     "dist"
